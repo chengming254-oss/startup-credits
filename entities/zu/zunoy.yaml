@@ -38,60 +38,23 @@ offers:
     economics:
       benefits:
         - benefit_id: ben_01
-          description: Free access to the Zunoy Growth/Business Plan for 12 months for organizations with up to 25 users.
+          description: Free access to the Zunoy Growth/Business Plan for 12 months.
           duration:
             kind: exact
             value: P1Y
           kind: free-service
           service: Zunoy Growth/Business Plan
         - benefit_id: ben_02
-          description: Priority support to get started, plus access to Zunoy resources, guides, and community.
-          kind: other
-        - benefit_id: ben_03
-          description: Discounted pricing offered once the free access ends.
+          description: Priority support to help the organization get started fast.
           kind: other
       consideration:
         kind: none
     eligibility:
       rule:
-        kind: all
-        rules:
-          - kind: any
-            rules:
-              - kind: all
-                rules:
-                  - criterion_id: cri_01
-                    fact: company.age_months
-                    kind: predicate
-                    operator: lt
-                    statement: The startup is less than 5 years old.
-                    value:
-                      type: number
-                      value: 60
-                  - criterion_id: cri_02
-                    kind: manual
-                    reason: external-verification
-                    statement: The applicant is a registered early-stage startup, from pre-seed to Series A.
-              - criterion_id: cri_03
-                kind: manual
-                reason: external-verification
-                statement: The applicant is a verified non-profit or NGO with an annual operating budget under $500,000.
-          - criterion_id: cri_04
-            fact: company.employee_count
-            kind: predicate
-            operator: lt
-            statement: The entire team is smaller than 25 people.
-            value:
-              type: number
-              value: 25
-          - criterion_id: cri_05
-            kind: manual
-            reason: not-machine-evaluable
-            statement: The organization uses software to create social or community impact, such as in education, health, civic tech, or the environment.
-          - criterion_id: cri_06
-            kind: manual
-            reason: not-machine-evaluable
-            statement: Zunoy will support the organization's core mission or product, not just internal experiments.
+        criterion_id: cri_01
+        kind: manual
+        reason: not-machine-evaluable
+        statement: The startup is less than 5 years old or the NGO has an annual operating budget under $500,000; the applicant is a registered early-stage startup (pre-seed to Series A) or a verified non-profit or NGO; the entire team is smaller than 25 people; the organization uses software to create social or community impact; and Zunoy will support its core mission or product, not just internal experiments.
     roles:
       terms_authority_entity_id: ent_01m136y5j00q3zgs0ys3g1ktck
       access_operator_entity_id: ent_01m136y5j00q3zgs0ys3g1ktck
